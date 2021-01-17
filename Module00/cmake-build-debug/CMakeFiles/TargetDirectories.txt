@@ -1,0 +1,3 @@
+/Users/pcatrina/Desktop/workspace/CPP/Module00/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/pcatrina/Desktop/workspace/CPP/Module00/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/pcatrina/Desktop/workspace/CPP/Module00/cmake-build-debug/CMakeFiles/Module00.dir

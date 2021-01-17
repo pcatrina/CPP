@@ -1,15 +1,19 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
-MAIN_SOURCES = megaphone.cpp
+MAIN_SOURCES =	\
+main.cpp		\
+PhoneBook.cpp	\
+Account.cpp		\
 
-NAME = megaphone
+NAME = phonebook
 
 OBJECTS = $(MAIN_SOURCES:.c=.o)
 
-all: $(NAME)
+all: $(MAIN_SOURCES) $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+#-o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $< -o $@

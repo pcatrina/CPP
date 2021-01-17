@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/pcatrina/Desktop/workspace/CPP/Module01/ex06/HumanA.hpp
+Weapon.hpp
+/Users/pcatrina/Desktop/workspace/CPP/Module01/ex06/Weapon.hpp
+iostream
+-
+string
+-
+
+/Users/pcatrina/Desktop/workspace/CPP/Module01/ex06/HumanB.hpp
+Weapon.hpp
+/Users/pcatrina/Desktop/workspace/CPP/Module01/ex06/Weapon.hpp
+iostream
+-
+string
+-
+
+/Users/pcatrina/Desktop/workspace/CPP/Module01/ex06/Weapon.hpp
+string
+-
+
+/Users/pcatrina/Desktop/workspace/CPP/Module01/ex06/main.cpp
+HumanA.hpp
+/Users/pcatrina/Desktop/workspace/CPP/Module01/ex06/HumanA.hpp
+HumanB.hpp
+/Users/pcatrina/Desktop/workspace/CPP/Module01/ex06/HumanB.hpp
+

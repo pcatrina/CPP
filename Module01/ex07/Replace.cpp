@@ -1,9 +1,26 @@
 #include "Replace.hpp"
 
-//std::string Replace::getReplace()
-//{
-//	return ();
-//}
+std::string Replace::getReplace(std::string &result,std::string &str1,
+								std::string &str2)
+{
+	if (str1 == str2)
+		return (result);
+	else
+	{
+		int i = 0;
+		while (i != -1)
+		{
+			i = result.find(str1);
+			if (i > 0)
+			{
+				result.erase(i, str1.length());
+				result.insert(i, str2);
+				i = 0;
+			}
+		}
+		return (result);
+	}
+}
 
 void Replace::setReplace(char const *filename_in, char const *str1_in,
 						 const char *str2_in)
@@ -20,22 +37,21 @@ void Replace::setReplace(char const *filename_in, char const *str1_in,
 	else
 	{
 		std::string		result;
-		std::ifstream	fs ("in.txt");
-//		fs.open("in.txt");
+		std::ifstream	fs (filename);
 		if(!fs.is_open())
 			throw "can't open file";
-//		std::ofstream	of;
-//		of.open(filename + ".replace",  std::ios::trunc);
-//		if(!of.is_open())
-//			throw "can't open out file";
+		std::ofstream	of;
+		of.open(filename + ".replace",  std::ios::trunc);
+		if(!of.is_open())
+			throw "can't open out file";
 		while (getline(fs, result))
 		{
-			std::cout << result << '\n';
-//			of << result;
-//			if (!fs.eof())
-//				of << "\n";
+			of << getReplace(result, str1, str2);
+			if (!fs.eof())
+				of << "\n";
 		}
+		of << std::endl;
 		fs.close();
-//		of.close();
+		of.close();
 	}
 }

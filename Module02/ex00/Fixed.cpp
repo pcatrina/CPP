@@ -6,11 +6,6 @@ Fixed::Fixed()
 	this->value = 0;
 }
 
-Fixed::Fixed(const int &num)
-{
-	setRawBits(num);
-}
-
 Fixed::Fixed(const Fixed &fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;

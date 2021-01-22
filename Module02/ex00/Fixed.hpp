@@ -12,7 +12,7 @@ public:
 	Fixed &operator=(Fixed const &fixed);
 	int	getRawBits(void) const;
 	void setRawBits(int const &raw);
-	~Fixed();
+	virtual ~Fixed();
 
 private:
 	int	value;

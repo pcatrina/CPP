@@ -7,7 +7,18 @@
 class ClapTrap : public FragTrap, public ScavTrap
 {
 public:
+	ClapTrap(std::string const &name);
 
+private:
+	unsigned int	HP;
+	unsigned int	MaxHP;
+	unsigned int 	EP;
+	unsigned int	MaxEP;
+	unsigned int	Level;
+	std::string 	Name;
+	unsigned int	MeleeAttackDamage;
+	unsigned int	RangeAttackDamage;
+	unsigned int 	ArmorDamageReductions;
 };
 
 

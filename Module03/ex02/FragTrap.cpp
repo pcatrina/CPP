@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string const &name) : Name(name)
+FragTrap::FragTrap(std::string const &name) : Name(name), ClapTrap()
 {
 	this->HP = 100;
 	this->MaxHP = 100;
@@ -13,34 +13,6 @@ FragTrap::FragTrap(std::string const &name) : Name(name)
 	std::cout << COD_STY_ITL << COL_YEL
 	<< "\nDirective one: Protect humanity! Directive two: Obey Jack "
 	"at all costs. Directive three: Dance!"<< COL_RES << std::endl;
-}
-
-void FragTrap::rangedAttack(const std::string &target)
-{
-	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " at range, causing "
-	<< this->RangeAttackDamage << " points of damage!" << std::endl;
-}
-
-void FragTrap::meleeAttack(const std::string &target)
-{
-	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " at melee, causing "
-	<< this->MeleeAttackDamage << " points of damage!" << std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount)
-{
-	(this->HP > amount) ? (this->HP = this->HP -(amount-this->ArmorDamageReductions)) : (this->HP = 0);
-	std::cout << COD_STY_UND << COL_RED
-	<< "FR4G-TP " << this->Name << " was attacked and received " <<
-	amount << " damage!" << " Now HP - " << this->HP << COL_RES << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount)
-{
-	(this->MaxHP - this->HP > amount) ? (this->HP += amount) : (this->HP =this->MaxHP);
-	std::cout << COD_STY_BLD << COL_GRE
-	<< "FR4G-TP " << this->Name << " be repaired at " <<
-	amount << " points!"  << " Now HP - " << this->HP << COL_RES << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(const std::string &target)

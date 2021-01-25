@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <sys/time.h>
+#include "ClapTrap.hpp"
 
 #define COD_STY_ITL "\x1B[3m"
 #define COD_STY_BLD "\x1B[1m"
@@ -17,7 +18,7 @@
 
 #define COL_RES	"\x1b[0m"
 
-class ScavTrap
+class ScavTrap : virtual public ClapTrap
 {
 private:
 	unsigned int	HP;
@@ -31,10 +32,6 @@ private:
 	unsigned int 	ArmorDamageReductions;
 public:
 	ScavTrap(std::string const &name);
-	void rangedAttack(std::string const &target);
-	void meleeAttack(std::string const &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 	void challengeNewcomer(std::string const &target);
 	~ScavTrap();
 };

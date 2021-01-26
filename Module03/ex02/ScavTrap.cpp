@@ -1,8 +1,14 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap() : ClapTrap()
+{
+	std::cout << COD_STY_ITL << COL_YEL
+			  << "\nHA! I knew someone was alive in here."<< COL_RES <<
+			  std::endl;
+}
+
 ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name)
 {
-
 	ClapTrap::EP = 50;
 	ClapTrap::MaxEP = 50;
 	ClapTrap::Level = 1;

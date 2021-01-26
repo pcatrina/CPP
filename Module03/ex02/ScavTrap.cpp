@@ -1,15 +1,14 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string const &name) : Name(name), ClapTrap()
+ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name)
 {
-	this->HP = 100;
-	this->MaxHP = 100;
-	this->EP = 50;
-	this->MaxEP = 50;
-	this->Level = 1;
-	this->MeleeAttackDamage = 20;
-	this->RangeAttackDamage = 15;
-	this->ArmorDamageReductions = 3;
+
+	ClapTrap::EP = 50;
+	ClapTrap::MaxEP = 50;
+	ClapTrap::Level = 1;
+	ClapTrap::MeleeAttackDamage = 20;
+	ClapTrap::RangeAttackDamage = 15;
+	ClapTrap::ArmorDamageReductions = 3;
 	std::cout << COD_STY_ITL << COL_YEL
 			  << "\nHA! I knew someone was alive in here."<< COL_RES <<
 			  std::endl;

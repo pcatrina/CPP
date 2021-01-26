@@ -18,18 +18,10 @@
 
 #define COL_RES	"\x1b[0m"
 
-class FragTrap : virtual public ClapTrap
+class FragTrap : public ClapTrap
 {
 private:
-	unsigned int	HP;
-	unsigned int	MaxHP;
-	unsigned int 	EP;
-	unsigned int	MaxEP;
-	unsigned int	Level;
-	std::string 	Name;
-	unsigned int	MeleeAttackDamage;
-	unsigned int	RangeAttackDamage;
-	unsigned int 	ArmorDamageReductions;
+	FragTrap();
 public:
 	FragTrap(std::string const &name);
 	void vaulthunter_dot_exe(std::string const &target);

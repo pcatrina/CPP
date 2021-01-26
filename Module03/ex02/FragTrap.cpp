@@ -1,18 +1,21 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string const &name) : Name(name), ClapTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
-	this->HP = 100;
-	this->MaxHP = 100;
-	this->EP = 100;
-	this->MaxEP = 100;
-	this->Level = 1;
-	this->MeleeAttackDamage = 30;
-	this->RangeAttackDamage = 20;
-	this->ArmorDamageReductions = 5;
 	std::cout << COD_STY_ITL << COL_YEL
-	<< "\nDirective one: Protect humanity! Directive two: Obey Jack "
-	"at all costs. Directive three: Dance!"<< COL_RES << std::endl;
+			  << "\nDirective one: Protect humanity! Directive two: Obey Jack "
+				 "at all costs. Directive three: Dance!"<< COL_RES << std::endl;
+}
+
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
+{
+	ClapTrap::Level = 1;
+	ClapTrap::MeleeAttackDamage = 30;
+	ClapTrap::RangeAttackDamage = 20;
+	ClapTrap::ArmorDamageReductions = 5;
+	std::cout << COD_STY_ITL << COL_YEL
+			  << "\nDirective one: Protect humanity! Directive two: Obey Jack "
+				 "at all costs. Directive three: Dance!"<< COL_RES << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(const std::string &target)

@@ -4,19 +4,22 @@
 
 int main()
 {
-	FragTrap frag("Fragtrap");
 
-	frag.beRepaired(40);
-	frag.takeDamage(40);
-	frag.beRepaired(10);
-	frag.meleeAttack("Ruslan");
-	frag.rangedAttack("Ruslan");
+	FragTrap *frag = new FragTrap("Fragtrap");
 
-	frag.vaulthunter_dot_exe("Ruslan");
-	frag.vaulthunter_dot_exe("Ruslan");
-	frag.vaulthunter_dot_exe("Ruslan");
-	frag.vaulthunter_dot_exe("Ruslan");
-	frag.vaulthunter_dot_exe("Ruslan");
+	frag->beRepaired(40);
+	frag->takeDamage(40);
+	frag->beRepaired(10);
+	frag->meleeAttack("Ruslan");
+	frag->rangedAttack("Ruslan");
+
+	frag->vaulthunter_dot_exe("Ruslan");
+	frag->vaulthunter_dot_exe("Ruslan");
+	frag->vaulthunter_dot_exe("Ruslan");
+	frag->vaulthunter_dot_exe("Ruslan");
+	frag->vaulthunter_dot_exe("Ruslan");
+
+	delete frag;
 
 	ScavTrap scrav("Scavtrap");
 

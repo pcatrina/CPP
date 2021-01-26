@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 	unsigned int	HP;
 	unsigned int	MaxHP;
 	unsigned int 	EP;
@@ -30,6 +30,8 @@ private:
 	unsigned int 	ArmorDamageReductions;
 public:
 	ClapTrap();
+	ClapTrap(std::string const &name);
+	ClapTrap(ClapTrap const &clapTrap);
 	void rangedAttack(std::string const &target);
 	void meleeAttack(std::string const &target);
 	void takeDamage(unsigned int amount);

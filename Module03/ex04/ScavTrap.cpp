@@ -45,6 +45,19 @@ void ScavTrap::challengeNewcomer(const std::string &target)
 	}
 }
 
+void ScavTrap::rangedAttack(const std::string &target)
+{
+	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " at "
+																	  "range, causing "
+			  << this->RangeAttackDamage << " points of damage!" << std::endl;
+}
+
+void ScavTrap::meleeAttack(const std::string &target)
+{
+	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " at melee, causing "
+			  << this->MeleeAttackDamage << " points of damage!" << std::endl;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "I'd say: \"I'm sorry\"... sincerely, I'm sorry I was bossy... "

@@ -21,13 +21,15 @@
 
 #define COL_RES	"\x1b[0m"
 
-class SuperTrap : public NinjaTrap, virtual public FragTrap
+class SuperTrap : public FragTrap, public NinjaTrap
 {
 private:
 	SuperTrap();
 public:
 	SuperTrap(std::string const &name);
-	~SuperTrap();
+	virtual void rangedAttack(std::string const &target);
+	virtual void meleeAttack(std::string const &target);
+	virtual ~SuperTrap();
 };
 
 

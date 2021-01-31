@@ -49,5 +49,9 @@ int main()
 	ninja.vaulthunter_dot_exe("Lee");
 
 	SuperTrap super("Superman");
+
+	super.rangedAttack("Batman");
+	super.meleeAttack("BAtman");
+
 	return 0;
 }

@@ -23,8 +23,10 @@ class ScavTrap : virtual public ClapTrap
 public:
 	ScavTrap();
 	ScavTrap(std::string const &name);
+	virtual void rangedAttack(std::string const &target);
+ 	virtual void meleeAttack(std::string const &target);
 	void challengeNewcomer(std::string const &target);
-	~ScavTrap();
+	virtual ~ScavTrap();
 };
 
 

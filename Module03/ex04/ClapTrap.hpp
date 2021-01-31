@@ -32,11 +32,11 @@ public:
 	ClapTrap();
 	ClapTrap(std::string const &name);
 	ClapTrap(ClapTrap const &clapTrap);
-	void rangedAttack(std::string const &target);
-	void meleeAttack(std::string const &target);
+	virtual void rangedAttack(std::string const &target);
+	virtual void meleeAttack(std::string const &target);
 	void takeDamage(unsigned int amount);
-	virtual void beRepaired(unsigned int amount);
-	~ClapTrap();
+	void beRepaired(unsigned int amount);
+	virtual ~ClapTrap();
 };
 
 #endif //MODULE03_CLAPTRAP_HPP

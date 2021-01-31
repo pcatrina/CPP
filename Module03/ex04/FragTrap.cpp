@@ -38,6 +38,19 @@ void FragTrap::vaulthunter_dot_exe(const std::string &target)
 	}
 }
 
+void FragTrap::rangedAttack(const std::string &target)
+{
+	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " at "
+																	  "range, causing "
+			  << this->RangeAttackDamage << " points of damage!" << std::endl;
+}
+
+void FragTrap::meleeAttack(const std::string &target)
+{
+	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " at melee, causing "
+			  << this->MeleeAttackDamage << " points of damage!" << std::endl;
+}
+
 FragTrap::~FragTrap()
 {
 	std::cout << "I'M DEAD I'M DEAD OHMYGOD I'M DEAD!" << std::endl;

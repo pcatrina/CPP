@@ -16,6 +16,12 @@ void Peon::getPolymorphed() const
 									  "pony!"<<std::endl;
 }
 
+Peon & Peon::operator=(const Peon &peon)
+{
+	this->Victim::operator=(peon);
+	return (*this);
+}
+
 Peon::~Peon()
 {
 	std::cout << "Bleuark..." << std::endl;

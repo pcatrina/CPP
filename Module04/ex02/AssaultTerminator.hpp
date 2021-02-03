@@ -7,6 +7,8 @@
 class AssaultTerminator : public ISpaceMarine {
 public:
 	AssaultTerminator();
+	AssaultTerminator(AssaultTerminator &assaultTerminator);
+	AssaultTerminator &operator=(AssaultTerminator &assaultTerminator);
 	virtual ISpaceMarine* clone() const;
 	virtual void battleCry() const;
 	virtual void rangedAttack() const;

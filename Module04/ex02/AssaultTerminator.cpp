@@ -5,9 +5,19 @@ AssaultTerminator::AssaultTerminator()
 	std::cout<<"* teleports from space *"<<std::endl;
 }
 
+AssaultTerminator::AssaultTerminator(AssaultTerminator &assaultTerminator)
+{
+	*this = assaultTerminator;
+}
+
+AssaultTerminator & AssaultTerminator::operator=(AssaultTerminator &assaultTerminator) {
+	*this = assaultTerminator;
+	return (*this);
+}
+
 ISpaceMarine * AssaultTerminator::clone() const
 {
-	AssaultTerminator *assaultTerminator = new AssaultTerminator(*this);
+	AssaultTerminator *assaultTerminator = new AssaultTerminator();
 	return (assaultTerminator);
 }
 

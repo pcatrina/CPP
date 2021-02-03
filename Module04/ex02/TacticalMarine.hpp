@@ -4,9 +4,14 @@
 #include <iostream>
 #include "ISpaceMarine.hpp"
 
-class TacticalMarine : public ISpaceMarine{
+class TacticalMarine : public ISpaceMarine {
+public:
 	TacticalMarine();
 	virtual ISpaceMarine* clone() const;
+	virtual void battleCry() const;
+	virtual void rangedAttack() const;
+	virtual void meleeAttack() const;
+	virtual ~TacticalMarine();
 };
 
 

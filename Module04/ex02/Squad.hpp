@@ -6,8 +6,8 @@
 
 class Squad : public ISquad {
 private:
-	static int count;
-	static ISpaceMarine *command[];
+	int count;
+	ISpaceMarine **command;
 public:
 	Squad();
 	Squad(Squad &squad);

@@ -1,10 +1,11 @@
 #include "Squad.hpp"
 
-Squad::Squad() {
+Squad::Squad() : count(0), command(nullptr) {
 }
 
-Squad::Squad(Squad &squad){
-	count = squad.getCount();
+Squad::Squad(Squad &squad): count(0), command(nullptr){
+	for (int i = 0; i < squad.count; i++)
+		this->push(squad.getUnit(i)->clone());
 }
 
 Squad & Squad::operator=(const Squad &squad) {
@@ -20,18 +21,33 @@ int Squad::getCount() const {
 }
 
 ISpaceMarine * Squad::getUnit(int i) const {
-	if (i < 0 && this->command[i])
+	if (i <= 0 && this->command[i])
 		return (this->command[i]);
 	else
-		return (NULL);
+		return (nullptr);
 }
 
 int Squad::push(ISpaceMarine *iSpaceMarine) {
-	if (iSpaceMarine == NULL)
-		return (0);
-	else {
-		this->command[getCount() + 1] = iSpaceMarine;
-		count++;
+	if (!iSpaceMarine)
+		return (this->count);
+	if (this->command)
+	{
+		for (int i = 0; i < this->count; i++)
+			if (this->command[i] == iSpaceMarine)
+				return (this->count);
+		ISpaceMarine **arr = new ISpaceMarine*[this->count];
+		for (int i = 0; i < this->count; i++)
+			arr[i] = this->command[i];
+		delete[] this->command;
+		this->command = arr;
+		this->command[this->count] = iSpaceMarine;
+		this->count++;
 	}
-	return (getCount());
+	else
+	{
+		this->command = new ISpaceMarine *[1];
+		this->command[0] = iSpaceMarine;
+		this->count = 1;
+	}
+	return (this->count);
 }

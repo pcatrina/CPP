@@ -10,8 +10,10 @@ TacticalMarine::TacticalMarine(TacticalMarine &tacticalMarine)
 	*this = tacticalMarine;
 }
 
-TacticalMarine & TacticalMarine::operator=(const TacticalMarine &tacticalMarine){
-	*this = tacticalMarine;
+TacticalMarine & TacticalMarine::operator=(const TacticalMarine &tacticalMarine)
+{
+	if (this != &tacticalMarine)
+		*this = tacticalMarine;
 	return (*this);
 }
 

@@ -10,8 +10,10 @@ AssaultTerminator::AssaultTerminator(AssaultTerminator &assaultTerminator)
 	*this = assaultTerminator;
 }
 
-AssaultTerminator & AssaultTerminator::operator=(AssaultTerminator &assaultTerminator) {
-	*this = assaultTerminator;
+AssaultTerminator & AssaultTerminator::operator=(AssaultTerminator &assaultTerminator)
+{
+	if (this != &assaultTerminator)
+		*this = assaultTerminator;
 	return (*this);
 }
 

@@ -14,6 +14,8 @@ Squad & Squad::operator=(const Squad &squad) {
 }
 
 Squad::~Squad() {
+	for (int i = 0; i < this->count; i++)
+		delete this->command[i];
 }
 
 int Squad::getCount() const {
@@ -21,7 +23,7 @@ int Squad::getCount() const {
 }
 
 ISpaceMarine * Squad::getUnit(int i) const {
-	if (i <= 0 && this->command[i])
+	if (i >= 0 && this->command[i])
 		return (this->command[i]);
 	else
 		return (nullptr);
@@ -30,7 +32,7 @@ ISpaceMarine * Squad::getUnit(int i) const {
 int Squad::push(ISpaceMarine *iSpaceMarine) {
 	if (!iSpaceMarine)
 		return (this->count);
-	if (this->command)
+	else if (this->command)
 	{
 		for (int i = 0; i < this->count; i++)
 			if (this->command[i] == iSpaceMarine)
@@ -40,14 +42,15 @@ int Squad::push(ISpaceMarine *iSpaceMarine) {
 			arr[i] = this->command[i];
 		delete[] this->command;
 		this->command = arr;
+		delete[] arr;
 		this->command[this->count] = iSpaceMarine;
 		this->count++;
 	}
 	else
 	{
-		this->command = new ISpaceMarine *[1];
-		this->command[0] = iSpaceMarine;
-		this->count = 1;
+		this->command = new ISpaceMarine*[1];
+		this->command[this->count] = iSpaceMarine;
+		this->count++;
 	}
 	return (this->count);
 }

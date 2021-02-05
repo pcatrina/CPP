@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "ISquad.hpp"
 #include "ISpaceMarine.hpp"
 #include "TacticalMarine.hpp"

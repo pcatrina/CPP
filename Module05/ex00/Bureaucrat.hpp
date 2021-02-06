@@ -2,6 +2,7 @@
 #define MODULE05_BUREAUCRAT_HPP
 
 #include <iostream>
+#include <string>
 #define COD_STY_ITL "\x1B[3m"
 #define COD_STY_BLD "\x1B[1m"
 #define COD_STY_UND "\x1B[4m"
@@ -31,7 +32,16 @@ public:
 	int getGrade() const;
 	void inc();
 	void dec();
-	virtual const char* GradeTooHighException() const throw();
+
+	class GradeTooHighException : public std::exception
+	{
+		virtual const char* what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		virtual const char* what() const throw();
+	};
 };
 
 std::ostream &operator<<(std::ostream &ost, Bureaucrat &bureaucrat);

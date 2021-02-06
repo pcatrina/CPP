@@ -2,22 +2,30 @@
 
 Bureaucrat::Bureaucrat(std::string const &name) : name(name), grade(0)
 {
-	std::cout<<COD_STY_BLD<<COL_RED<<"Enter rating!!!"<<COL_RES<<std::endl;
-	int i;
-	std::cin >> i;
-	if (std::cin.fail())
+	while (1)
 	{
-		std::cin.clear();
-		std::cout << "Wrong input , Try once more ..." << std::endl;
+		std::cout<<COD_STY_BLD<<COL_RED<<"Enter rating!!!"<<COL_RES<<std::endl;
+		int i;
+		std::cin >> i;
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cout << "Wrong input , Try once more ..." << std::endl;
+		}
+		else if  (i > 0 && i <= 150)
+		{
+			this->grade = i;
+			break;
+		}
+		else
+		{
+			if (i < 1)
+				throw Bureaucrat::GradeTooHighException();
+			else if (i > 150)
+				throw Bureaucrat::GradeTooLowException();
+		}
+		std::cin.ignore(32767, '\n');
 	}
-	else if  (i > 0 && i <= 150)
-		this->grade = i;
-	else
-	{
-		if (i > 150)
-			throw Bureaucrat::GradeTooHighException();
-	}
-	std::cin.ignore(32767, '\n');
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &bureaucrat) : name(bureaucrat.name),
@@ -49,23 +57,33 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::inc()
 {
-	if (this->grade > 0 && this->grade <= 150)
-		this->grade++;
+	if (this->grade > 1 && this->grade <= 150)
+		this->grade--;
+	else
+		throw Bureaucrat::GradeTooLowException();
 }
 
 void Bureaucrat::dec()
 {
-	if (this->grade > 0 && this->grade <= 150)
-		this->grade--;
+	if (this->grade >= 1 && this->grade < 150)
+		this->grade++;
+	else
+		throw Bureaucrat::GradeTooHighException();
 }
 
-const char * Bureaucrat::GradeTooHighException() const throw()
+const char * Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Too Hight!");
 }
 
+const char * Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Too Low!");
+}
+
 std::ostream &operator<<(std::ostream &ost, Bureaucrat &bureaucrat)
 {
-	ost << bureaucrat.getName() <<", bureaucrat grade "<<bureaucrat.getGrade();
+	ost << bureaucrat.getName() <<", bureaucrat grade "
+	<<bureaucrat.getGrade()<<std::endl;
 	return (ost);
 }

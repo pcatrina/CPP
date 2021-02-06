@@ -1,20 +1,37 @@
 #include <iostream>
-#include <vector>
 #include "Bureaucrat.hpp"
 
 int main()
 {
 	try
 	{
-		Bureaucrat *putin = new Bureaucrat("Vova");
-//		std::cout<<*putin;
-//		putin->inc();
-//		putin->dec();
-//		std::cout<<*putin;
+		Bureaucrat putin("Vova");
+		putin.inc();
+		std::cout<<putin;
 	}
 	catch (std::exception & e)
 	{
-		std::cout<<e.what()<<std::endl;
+		std::cerr<<e.what()<<std::endl;
+	}
+	try
+	{
+		Bureaucrat putin("Vova");
+		putin.dec();
+		std::cout<<putin;
+	}
+	catch (std::exception & e)
+	{
+		std::cerr<<e.what()<<std::endl;
+	}
+	try
+	{
+		Bureaucrat Chinush("Sechin");
+		Chinush.inc();
+		std::cout<<Chinush;
+	}
+	catch (std::exception & e)
+	{
+		std::cerr<<e.what()<<std::endl;
 	}
 	return 0;
 }

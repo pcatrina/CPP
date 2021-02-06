@@ -98,6 +98,8 @@ void Bureaucrat::executeForm(const Form &form)
 	if (this->getGrade() <= form.getGradeToExecution())
 		std::cout<<COD_STY_ITL<<COL_GRE
 		<<this->getName()<<" execute "<<form.getName()<<COL_RES<<std::endl;
+	else
+		throw Bureaucrat::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &ost, Bureaucrat &bureaucrat)

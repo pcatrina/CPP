@@ -16,13 +16,16 @@ int main()
 		std::cout<<putin;
 		ShrubberyCreationForm sForm("SForm");
 		std::cout<<sForm;
+		putin.executeForm(sForm);
 		sForm.action(putin);
 		RobotomyRequestForm rForm("RForm");
-		rForm.action(putin);
 		std::cout<<rForm;
+		putin.executeForm(rForm);
+		rForm.action(putin);
 		PresidentialPardonForm pForm("PForm");
-		pForm.action(putin);
 		std::cout<<pForm;
+		putin.executeForm(pForm);
+		pForm.action(putin);
 	}
 	catch (std::exception &e)
 	{

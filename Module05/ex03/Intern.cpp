@@ -35,16 +35,20 @@ Form* Intern::makeForm(const std::string &name, const std::string &target)
 	_pool[0] = ShrubberyCreationForm::newForm(target);
 	_pool[1] = RobotomyRequestForm::newForm(target);
 	_pool[2] = PresidentialPardonForm::newForm(target);
-	for (int i = 0; _name[i] == name && i < 3; i++)
+	int i = -1;
+	while (i++ < 3)
 	{
-		int j = 0;
-		while (j < 3)
+		if (_name[i] == name)
 		{
-			if (j != i)
-				delete _pool[j];
-			j++;
+			int j = 0;
+			while (j < 3)
+			{
+				if (j != i)
+					delete _pool[j];
+				j++;
+			}
+			return (_pool[i]);
 		}
-		return (_pool[i]);
 	}
 	return (nullptr);
 }

@@ -33,6 +33,13 @@ int main()
 		putin.executeForm(*newForm);
 		newForm->action(putin);
 		delete newForm;
+
+		Intern someRandomIntern;
+		Form* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		rrf->action(putin);
+		putin.executeForm(*rrf);
+		delete rrf;
 	}
 	catch (std::exception &e)
 	{

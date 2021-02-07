@@ -13,6 +13,7 @@ public:
 	ShrubberyCreationForm &operator=(ShrubberyCreationForm const&shrubberyCreationForm);
 	virtual ~ShrubberyCreationForm();
 
+	static ShrubberyCreationForm * newForm(std::string const &target);
 	virtual void action(Bureaucrat const &bureaucrat) const;
 };
 

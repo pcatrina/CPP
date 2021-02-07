@@ -1,5 +1,9 @@
 #include "Form.hpp"
 
+Form::Form()
+{
+}
+
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecution)
 : name(name), sign(false), gradeToSign(gradeToSign), gradeToExecution
 (gradeToExecution)
@@ -86,6 +90,11 @@ void Form::execute(const Bureaucrat &executor) const
 	}
 	else
 		throw Form::GradeTooLowException();
+}
+
+void Form::setName(const std::string &name)
+{
+	Form::name = name;
 }
 
 std::ostream &operator<<(std::ostream &ost, Form const &form)

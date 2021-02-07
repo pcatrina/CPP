@@ -34,3 +34,9 @@ Form(ref.getName(), ref.getGradeToSign(), ref.getGradeToExecution())
 	else
 		throw RobotomyRequestForm::GradeTooLowException();
  }
+
+ RobotomyRequestForm * RobotomyRequestForm::newForm(const std::string &target)
+ {
+	RobotomyRequestForm *newForm = new RobotomyRequestForm(target);
+	 return (newForm);
+ }

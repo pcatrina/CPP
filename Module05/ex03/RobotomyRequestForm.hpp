@@ -12,6 +12,7 @@ public:
 	RobotomyRequestForm &operator=(RobotomyRequestForm const &ref);
 	~RobotomyRequestForm();
 
+	static RobotomyRequestForm *newForm(std::string const &target);
 	virtual void action(Bureaucrat const &bureaucrat) const;
 };
 

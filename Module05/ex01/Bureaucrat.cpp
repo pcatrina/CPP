@@ -84,7 +84,7 @@ void Bureaucrat::signForm(const Form &form)
 {
 	if (form.isSign() == 1)
 		std::cout<<COD_STY_BLD<<COL_GRE<<this->getName()
-		<<" signs "<<form.getName();
+		<<" signs "<<form.getName()<<std::endl;
 	else
 	{
 		std::cerr << this->getName() << " cannot sign " << form.getName()
@@ -96,6 +96,7 @@ void Bureaucrat::signForm(const Form &form)
 std::ostream &operator<<(std::ostream &ost, Bureaucrat &bureaucrat)
 {
 	ost << bureaucrat.getName() <<", bureaucrat grade "
-	<<bureaucrat.getGrade()<<std::endl;
+	<<bureaucrat.getGrade();
+	ost<<std::endl;
 	return (ost);
 }

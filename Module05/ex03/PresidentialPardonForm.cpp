@@ -25,6 +25,13 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
 
+PresidentialPardonForm * PresidentialPardonForm::newForm(std::string const
+&target)
+{
+	PresidentialPardonForm *newForm = new PresidentialPardonForm(target);
+	return (newForm);
+}
+
 void PresidentialPardonForm::action(const Bureaucrat &bureaucrat) const
 {
 	if (bureaucrat.getGrade() <= this->getGradeToExecution())

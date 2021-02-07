@@ -46,7 +46,7 @@ void ShrubberyCreationForm::action(Bureaucrat const &bureaucrat) const
 				"    \\__/"
 		};
 		std::ofstream	of;
-		of.open(bureaucrat.getName() + "_shrubbery", std::ios::trunc);
+		of.open(this->getName() + "_shrubbery", std::ios::trunc);
 		if (!of.is_open())
 			throw ShrubberyCreationForm::ErrorMessage();
 		else
@@ -57,4 +57,11 @@ void ShrubberyCreationForm::action(Bureaucrat const &bureaucrat) const
 	}
 	else
 		throw ShrubberyCreationForm::GradeTooLowException();
+}
+
+ShrubberyCreationForm * ShrubberyCreationForm::newForm(
+		const std::string &target)
+{
+	ShrubberyCreationForm *newForm = new ShrubberyCreationForm(target);
+	return (newForm);
 }

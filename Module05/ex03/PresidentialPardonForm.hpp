@@ -12,6 +12,7 @@ public:
 	PresidentialPardonForm &operator=(PresidentialPardonForm const &ref);
 	virtual ~PresidentialPardonForm();
 
+	static PresidentialPardonForm *newForm(std::string const &target);
 	virtual void action(Bureaucrat const &bureaucrat) const;
 };
 

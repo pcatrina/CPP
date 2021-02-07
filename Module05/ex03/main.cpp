@@ -7,6 +7,9 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+#define SC_FORM "shrubbery creation"
+#define RR_FORM "robotomy request"
+#define PP_FORM "presidential pardon"
 
 int main()
 {
@@ -26,12 +29,14 @@ int main()
 		std::cout<<pForm;
 		putin.executeForm(pForm);
 		pForm.action(putin);
+		Form *newForm = Intern::makeForm(SC_FORM, "newSform");
+		putin.executeForm(*newForm);
+		newForm->action(putin);
+		delete newForm;
 	}
 	catch (std::exception &e)
 	{
 		std::cerr<<e.what()<<std::endl;
 	}
-	Intern intern;
-	intern.makeForm("ShrubberyCreationForm", "SForm");
 	return 0;
 }

@@ -2,6 +2,12 @@
 #define MODULE05_INTERN_HPP
 
 #include <iostream>
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "Form.hpp"
+
+class Form;
 
 class Intern
 {
@@ -10,7 +16,7 @@ public:
 	Intern(Intern const &intern);
 	Intern &operator=(Intern const &intern);
 	~Intern();
-	void makeForm(std::string const &name, std::string const &target);
+	static Form* makeForm(std::string const &name, std::string const &target);
 };
 
 

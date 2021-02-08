@@ -6,7 +6,7 @@ int main(int ac, char **av)
 	if (ac == 2)
 	{
 		Scalar scalar(av[1]);
-		std::cout<<scalar.getChar()<<std::endl;
+		std::cout<<scalar;
 	}
 	return 0;
 }

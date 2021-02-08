@@ -61,7 +61,7 @@ double Scalar::getDouble() const
 
 std::ostream &operator<<(std::ostream &os, Scalar const &scalar)
 {
-	os	<<"char: "<<scalar.getChar()<<"\n"
+	os	<<"char: \'"<<scalar.getChar()<<"\'"<<"\n"
 		<<"int: "<<scalar.getInt()<<"\n"
 		<<"float: "<<scalar.getFloat()<<"\n"
 		<<"double "<<scalar.getDouble()<<std::endl;

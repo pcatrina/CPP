@@ -3,11 +3,11 @@
 
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 class Scalar
 {
 private:
-	std::string	_tmp;
 	char	_char;
 	int		_int;
 	float 	_float;
@@ -19,10 +19,11 @@ public:
 	Scalar &operator=(Scalar const &scalar);
 	~Scalar();
 
-	void castChar(char* &str);
-	void castInt(char* &str);
-	void castFloat(char* &str);
-	void castDouble(char* &str);
+	void convert(char* &str);
+	void castChar(const char* &_tmp);
+	void castInt(const char* &_tmp);
+	void castFloat(const char* &_tmp);
+	void castDouble(void);
 
 	char getChar() const;
 	int getInt() const;

@@ -96,8 +96,8 @@ std::ostream &operator<<(std::ostream &os, Scalar const &scalar)
 		os<<"char: Non displayable\n";
 	else
 		os<<"char: \'"<<scalar.getChar()<<"\'"<<"\n";
-	if (isnan(scalar.getFloat()) == 1 || isinf(scalar.getFloat()))
-		os<<"char: impossible\n";
+	if (isnan(scalar.getFloat()) || isinf(scalar.getFloat()))
+		os<<"int: impossible\n";
 	else
 		os<<"int: "<<scalar.getInt()<<"\n";
 	os.setf(std::ios::fixed);

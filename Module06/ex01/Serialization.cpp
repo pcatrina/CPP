@@ -12,8 +12,16 @@ std::string random(std::string str)
 	char tmp[5];
 	for (int i = 0; i < 4; i++)
 	{
-		int j = rand() % (126 - 30) + 30;
-		tmp[i] = static_cast<char>(j);
+		while (true)
+		{
+			int j = rand() % (126 - 30) + 30;
+			char c = static_cast<char>(j);
+			if (isalnum(c))
+			{
+				tmp[i] = c;
+				break;
+			}
+		}
 	}
 	tmp[4] = '\0';
 	str = std::string(tmp);

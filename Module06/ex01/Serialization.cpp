@@ -9,8 +9,8 @@ struct Data
 
 std::string random(std::string str)
 {
-	char tmp[5];
-	for (int i = 0; i < 4; i++)
+	char tmp[9];
+	for (int i = 0; i < 8; i++)
 	{
 		while (true)
 		{
@@ -23,7 +23,7 @@ std::string random(std::string str)
 			}
 		}
 	}
-	tmp[4] = '\0';
+	tmp[8] = '\0';
 	str = std::string(tmp);
 	return str;
 }

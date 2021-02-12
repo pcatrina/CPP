@@ -15,6 +15,7 @@ int main( void ) {
 			std::cout<<arr_2[i]<<std::endl;
 		}
 		arr_2[5] = 777;
+		std::cout<<arr_2[5]<<std::endl;
 	}
 	catch (std::exception &e) {
 		std::cerr<<e.what()<<std::endl;

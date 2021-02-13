@@ -37,13 +37,28 @@ int Span::shortestSpan() {
 	it_1 = arr.begin();
 	it_2 = it_1 + 1;
 	res = *it_2 - *it_1;
-	for (unsigned int i = 0; i < this->N; i++)
+	for (unsigned int i = 0; i < (arr.size() - 2); i++)
 	{
 		it_1 = it_2;
 		it_2++;
-		if (res < (*it_2 - *it_1))
+		if (res > (*it_2 - *it_1))
 			res = *it_2 - *it_1;
 	}
 	return (res);
 }
+
+int Span::longestSpan()
+{
+	if (this->arr.size() == 1 || this->arr.empty())
+		throw (std::string("nothing to span"));
+	std::vector<int>::iterator it_1;
+	std::vector<int>::iterator it_2;
+	int res;
+	std::sort(arr.begin(), arr.end());
+	it_1 = arr.begin();
+	it_2 = --arr.end();
+	res = *it_2 - *it_1;
+	return (res);
+}
+
 

@@ -22,7 +22,7 @@ public:
 
 	void addNumber(int);
 	int shortestSpan();
-
+	int longestSpan();
 };
 
 
